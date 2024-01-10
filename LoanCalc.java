@@ -62,7 +62,7 @@ public class LoanCalc {
 		double paymentForAYear = (L + H) / 2;
 		double amountLeft = loan;
 		iterationCounter = 0;
-		while (amountLeft > epsilon || amountLeft < 0) {
+		while (Math.abs(amountLeft) > epsilon) {
 			amountLeft = endBalance(loan, rate, n, paymentForAYear);
 			if (amountLeft >= epsilon) {
 				L = paymentForAYear;
